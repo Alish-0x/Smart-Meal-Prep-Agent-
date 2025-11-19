@@ -1,0 +1,41 @@
+Setup Guide for Smart Meal Prep Agent
+
+1. Environment Setup
+
+Create a .env file in this directory:
+
+GOOGLE_API_KEY=your_actual_api_key_here
+MODEL_NAME=gemini-1.5-flash
+
+
+2. Install Dependencies
+# Create virtual environment
+python -m venv venv
+# Activate virtual environment
+source venv/bin/activate
+# Install dependencies
+pip install -r requirements.txt
+
+
+3. Run the Agent
+
+python main.py
+
+
+4. Usage Examples
+
+Try these prompts when the app starts:
+
+"I need a 3-day vegetarian meal plan with high protein."
+
+"Give me 5 quick dinner recipes under 30 minutes, mediterranean style."
+
+"I have $50 for the week, plan cheap healthy dinners."
+
+Architecture Notes
+
+main.py: Acts as the "Orchestrator", manually chaining the agents together.
+
+agents.py: Contains the Gemini configuration. RecipeAgent uses Google Search grounding.
+
+tools.py: Contains the mock database and Python function tools.
